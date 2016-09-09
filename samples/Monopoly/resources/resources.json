@@ -1,0 +1,14 @@
+{
+    "Chance": {
+        "type": "Deck",
+        "cards": [
+            
+        ]
+    },
+    "Community Chest": {
+        "type": "Deck",
+        "cards": [
+            
+        ]
+    }
+}

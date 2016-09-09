@@ -1,0 +1,110 @@
+{
+    "StartTurn": {
+        "events": ["StartTurn"],
+        "actions": [
+            {
+                "type": "set_phase",
+                "phase": "Roll the Dice"
+            }
+        ]
+    },
+    "Roll the Dice": {
+        "events": ["Roll the Dice"],
+        "actions": [
+            {
+                "type": "set_phase",
+                "phase": "Movement"
+            },
+            {
+                "type": "roll_dice",
+                "dice": [
+                    "d6",
+                    "d6"
+                ]
+            }
+        ]
+    },
+    "Movement": {
+        "events": ["diceroll"],
+        "conditions": [
+            {
+                "type": "not_in_jail"
+            },
+            {
+                "type": "rolled_not_third_doubles"
+            }
+        ],
+        "actions": [
+            {
+                "type": "move_player_pawn"
+            },
+            {
+                "type": "set_phase",
+                "phase": "Tile Actions"
+            }
+        ]
+    },
+    "Go to Jail": {
+        "events": ["diceroll"],
+        "conditions": [
+            {
+                "type": "not_in_jail"
+            },
+            {
+                "type": "rolled_third_doubles"
+            }
+        ],
+        "actions": [
+            {
+                "type": "move_player_pawn",
+                "position": "In Jail"
+            },
+            {
+                "type": "set_phase",
+                "phase": "Tile Actions"
+            }
+        ]
+    },
+    "Escape Jail": {
+        "events": ["diceroll"],
+        "conditions": [
+            {
+                "type": "in_jail"
+            },
+            {
+                "type": "rolled_doubles"
+            }
+        ],
+        "actions": [
+            {
+                "type": "set_phase",
+                "phase": "Tile Actions"
+            },
+            {
+                "type": "move_player_pawn",
+                "position": "Just Visiting"
+            }
+        ]
+    },
+    "Stay in Jail": {
+        "events": ["diceroll"],
+        "conditions": [
+            {
+                "type": "in_jail"
+            },
+            {
+                "type": "rolled_not_doubles"
+            }
+        ],
+        "actions": [
+            {
+                "type": "set_phase",
+                "phase": "Tile Actions"
+            }
+        ]
+    },
+    "Tile Actions": {
+    },
+    "Pass the Dice": {
+    }  
+}

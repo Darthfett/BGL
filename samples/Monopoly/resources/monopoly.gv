@@ -1,0 +1,54 @@
+strict digraph Monopoly {
+    start [style=invis];
+
+    go                    [label="Go\n(collect $200)",          comment="TileType=Go",              pos="10,  0"];
+    mediterranean_avenue  [label="Mediterranean Avenue\n$60",   comment="TileType=Purple",          pos=" 9,  0"];
+    community_chest_1     [label="Community Chest",             comment="TileType=CommunityChest",  pos=" 8,  0"];
+    baltic_avenue         [label="Baltic Avenue\n$60",          comment="TileType=Purple",          pos=" 7,  0"];
+    income_tax            [label="Income Tax\n(pay $200)",      comment="TileType=IncomeTax",       pos=" 6,  0"];
+    reading_railroad      [label="Reading Railroad\n$200",      comment="TileType=RailRoad",        pos=" 5,  0"];
+    oriental_avenue       [label="Oriental Avenue\n$100",       comment="TileType=LightBlue",       pos=" 4,  0"];
+    chance_1              [label="Chance",                      comment="TileType=Chance",          pos=" 3,  0"];
+    vermont_avenue        [label="Vermont Avenue\n$100",        comment="TileType=LightBlue",       pos=" 2,  0"];
+    connecticut_avenue    [label="Connecticut Avenue\n$120",    comment="TileType=LightBlue",       pos=" 1,  0"];
+    in_jail               [label="In Jail",                     comment="TileType=InJail",          pos=" 0,  0"];
+    just_visiting         [label="Just Visiting",               comment="TileType=JustVisiting",    pos=" 0,  0"];
+    st_charles_place      [label="St Charles Place\n$140",      comment="TileType=Pink",            pos=" 0,  1"];
+    electric_company      [label="Electric Company\n$150",      comment="TileType=ElectricCompany", pos=" 0,  2"];
+    states_avenue         [label="States Avenue\n$140",         comment="TileType=Pink",            pos=" 0,  3"];
+    virginia_avenue       [label="Virginia Avenue\n$160",       comment="TileType=Pink",            pos=" 0,  4"];
+    pennsylvania_railroad [label="Pennsylvania Railroad\n$200", comment="TileType=RailRoad",        pos=" 0,  5"];
+    st_james_place        [label="St. James Place\n$180",       comment="TileType=Orange",          pos=" 0,  6"];
+    community_chest_2     [label="Community Chest",             comment="TileType=CommunityChest",  pos=" 0,  7"];
+    tennessee_avenue      [label="Tennessee Avenue\n$180",      comment="TileType=Orange",          pos=" 0,  8"];
+    new_york_avenue       [label="New York Avenue\n$200",       comment="TileType=Orange",          pos=" 0,  9"];
+    free_parking          [label="Free Parking",                comment="TileType=FreeParking",     pos=" 0, 10"];
+    kentucky_avenue       [label="Kentucky Avenue\n$220",       comment="TileType=Red",             pos=" 1, 10"];
+    chance_2              [label="Chance",                      comment="TileType=Chance",          pos=" 2, 10"];
+    indiana_avenue        [label="Indiana Avenue\n$220",        comment="TileType=Red",             pos=" 3, 10"];
+    illinois_avenue       [label="Illinois Avenue\n$240",       comment="TileType=Red",             pos=" 4, 10"];
+    b_and_o_railroad      [label="B&O Railroad\n$200",          comment="TileType=RailRoad",        pos=" 5, 10"];
+    atlantic_avenue       [label="Atlantic Avenue\n$260",       comment="TileType=Yellow",          pos=" 6, 10"];
+    ventnor_avenue        [label="Ventnor Avenue\n$260",        comment="TileType=Yellow",          pos=" 7, 10"];
+    water_works           [label="Water Works\n$150",           comment="TileType=WaterWorks",      pos=" 8, 10"];
+    marvin_gardens        [label="Marvin Gardens\n$280",        comment="TileType=Yellow",          pos=" 9, 10"];
+    go_to_jail            [label="Go To Jail",                  comment="TileType=GoToJail",        pos="10, 10"];
+    pacific_avenue        [label="Pacific Avenue\n$300",        comment="TileType=Green",           pos="10,  9"];
+    north_carolina_avenue [label="North Carolina Avenue\n$300", comment="TileType=Green",           pos="10,  8"];
+    community_chest_3     [label="Community Chest",             comment="TileType=CommunityChest",  pos="10,  7"];
+    pennsylvania_avenue   [label="Pennsylvania Avenue\n$320",   comment="TileType=Green",           pos="10,  6"];
+    short_line_railroad   [label="Short Line Railroad\n$200",   comment="TileType=RailRoad",        pos="10,  5"];
+    chance_3              [label="Chance",                      comment="TileType=Chance",          pos="10,  4"];
+    park_place            [label="Park Place\n$350",            comment="TileType=DarkBlue",        pos="10,  3"];
+    luxury_tax            [label="Luxury Tax\n(pay $100)",      comment="TileType=LuxuryTax",       pos="10,  2"];
+    boardwalk             [label="Boardwalk\n$400",             comment="TileType=DarkBlue",        pos="10,  1"];
+
+    start -> go;
+    go -> mediterranean_avenue -> community_chest_1 -> baltic_avenue -> income_tax -> reading_railroad -> oriental_avenue -> chance_1 -> vermont_avenue -> connecticut_avenue -> just_visiting;
+    in_jail -> just_visiting;
+    just_visiting -> st_charles_place -> electric_company -> states_avenue -> virginia_avenue -> pennsylvania_railroad -> st_james_place -> community_chest_2 -> tennessee_avenue -> new_york_avenue -> free_parking;
+    free_parking -> kentucky_avenue -> chance_2 -> indiana_avenue -> illinois_avenue -> b_and_o_railroad -> atlantic_avenue -> ventnor_avenue -> water_works -> marvin_gardens -> go_to_jail;
+    go_to_jail -> in_jail;
+    go_to_jail -> pacific_avenue -> north_carolina_avenue -> community_chest_3 -> pennsylvania_avenue -> short_line_railroad -> chance_3 -> park_place -> luxury_tax -> boardwalk -> go;
+
+}

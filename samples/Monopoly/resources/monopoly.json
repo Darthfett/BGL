@@ -1,0 +1,18 @@
+{
+    "name": "Monopoly",
+    "num_players": {
+        "type": "range",
+        "min": 2,
+        "max": 4
+    },
+    "phases": [
+        "StartTurn",
+        "Roll the Dice",
+        "Movement",
+        "Tile Actions",
+        "EndTurn"
+    ],
+    "board": "monopoly.gv",
+    "resources": "resources.json",
+    "rules": "rules.json"
+}

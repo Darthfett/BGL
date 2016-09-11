@@ -176,6 +176,8 @@ class BoardLoader:
         
         rules = rule_loader.load(rules_dict)
         
+        # TODO: Do something with rules
+        
         return board
     
     def __init__(self, graph_loader=None, rule_loader=None):

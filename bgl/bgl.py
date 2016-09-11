@@ -46,7 +46,7 @@ class BGLWindow(pyglet.window.Window):
         self.clear()
         
         glPushMatrix()
-        self.board.draw(self)
+        self.board.draw(self, self.board.graph)
         glPopMatrix()
         
         self.fps_display.draw()

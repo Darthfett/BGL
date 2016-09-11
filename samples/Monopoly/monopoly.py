@@ -15,7 +15,6 @@ from os.path import dirname, join, realpath
 #import docopt
 
 from ...bgl import bgl
-from ...bgl.bgl import loader
 from . import loader
 
 

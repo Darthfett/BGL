@@ -1,0 +1,16 @@
+{
+    "name": "Love Letter",
+    "num_players": {
+        "type": "range",
+        "min": 2,
+        "max": 4
+    },
+    "phases": [
+        "StartTurn",
+        "DrawCard",
+        "PlayCard",
+        "EndTurn"
+    ],
+    "resources": "resources.json",
+    "rules": "rules.json"
+}

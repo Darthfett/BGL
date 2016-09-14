@@ -1,0 +1,54 @@
+{
+    "StartTurn": {
+        "events": ["StartTurn"],
+        "actions": [
+            {
+                "type": "set_phase",
+                "phase": "DrawCard"
+            }
+        ]
+    },
+    "DrawCard": {
+        "events": ["DrawCard"],
+        "actions": [
+            {
+                "type": "draw_card",
+                "deck": "Deck"
+            },
+            {
+                "type": "check_game_ended"
+            },
+            {
+                "type": "set_phase",
+                "phase": "PlayCard"
+            }
+        ]
+    },
+    "PlayCard": {
+        "events": ["PlayCard"],
+        "actions": [
+            {
+                "type": "choose_play_card"
+            },
+            {
+                "type": "set_phase",
+                "phase": "EndTurn"
+            }
+        ]
+    },
+    "EndTurn": {
+        "events": ["EndTurn"],
+        "actions": [
+            {
+                "type": "check_game_ended"
+            },
+            {
+                "type": "start_next_player_turn"
+            },
+            {
+                "type": "set_phase",
+                "phase": "StartTurn"
+            }
+        ]
+    }
+}

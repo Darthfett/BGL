@@ -1,0 +1,55 @@
+{
+    "Deck": {
+        "type": "Deck",
+        "cards": {
+            "guard": {
+                "count": 5,
+                "face": "guard.png",
+                "value": 1,
+                "text": "Name a non-Guard card and choose a player.  If that player has that card, he or she is out of the round."
+            },
+            "priest": {
+                "count": 2,
+                "face": "priest.png",
+                "value": 2,
+                "text": "Look at another player's hand."
+            },
+            "baron": {
+                "count": 2,
+                "face": "baron.png",
+                "value": 3,
+                "text": "You and another player secretly compare hands.  The player with the lower value is out of the round."
+            },
+            "handmaiden": {
+                "count": 2,
+                "face": "handmaiden.png",
+                "value": 4,
+                "text": "Until your next turn, ignore all effects from other players' cards."
+            },
+            "prince": {
+                "count": 2,
+                "face": "prince.png",
+                "value": 5,
+                "text": "Choose any player (including yourself) to discard his or her hand and draw a new card."
+            },
+            "king": {
+                "count": 1,
+                "face": "king.png",
+                "value": 6,
+                "text": "Trade hands with another player of your choice."
+            },
+            "countess": {
+                "count": 1,
+                "face": "countess.png",
+                "value": 7,
+                "text": "If you have this card and the King or Prince in your hand, you must discard this card."
+            },
+            "princess": {
+                "count": 1,
+                "face": "princess.png",
+                "value": 8,
+                "text": "If you discard this card, you are out of the round."
+            }
+        }
+    }
+}

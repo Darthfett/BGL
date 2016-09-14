@@ -60,9 +60,13 @@ class BGLWindow(pyglet.window.Window):
         pyglet.app.run()
     
         
-    def __init__(self, *args, board, **kwargs):
+    def __init__(self, *args, game_board, **kwargs):
         super().__init__(*args, **kwargs)
-        self.board = board
+        
+        if game_board is None:
+            game_board = board.Board()
+            
+        self.board = game_board
         self.fps_display = pyglet.clock.ClockDisplay()
 
 
@@ -76,8 +80,8 @@ def get_usage():
         usage = pattern.findall(__doc__)[0].strip()
     return usage
 
-def run(board):
-    window = BGLWindow(1200, 900, board=board)
+def run(game_board=None):
+    window = BGLWindow(1200, 900, game_board=game_board)
     window.run()
 
 
@@ -91,9 +95,9 @@ def main(**kwargs):
         
     bg_path = kwargs['--board']
     
-    board = loader.load_board(bg_path)
+    game_board = loader.load_board(bg_path)
     
-    run(board)
+    run(game_board)
 
 
 if __name__ == '__main__':

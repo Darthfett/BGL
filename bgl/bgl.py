@@ -80,8 +80,8 @@ def get_usage():
         usage = pattern.findall(__doc__)[0].strip()
     return usage
 
-def run(game_board=None):
-    window = BGLWindow(1200, 900, game_board=game_board)
+def run(game_board=None, width=1200, height=900):
+    window = BGLWindow(width, height, game_board=game_board)
     window.run()
 
 

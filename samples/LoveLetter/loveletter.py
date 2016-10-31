@@ -13,7 +13,7 @@ from ...bgl import bgl
 def main(**kwargs):
     bg_path = join(dirname(realpath(__file__)), 'resources', 'loveletter.json')
     
-    # board = bgl.loader.load_board(bg_path, loader.MonopolyGraphLoader)
+    board = bgl.loader.load_board(bg_path)
     
     bgl.run()
     

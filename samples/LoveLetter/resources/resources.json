@@ -1,6 +1,14 @@
 {
     "Deck": {
-        "type": "Deck",
+        "type": "deck",
+        "drawbatch": [
+            {
+                "type": "deck",
+                "position": ["50%", "50%"],
+                "alignment": "center",
+                "src": "cardback.png"
+            }
+        ],
         "cards": {
             "guard": {
                 "count": 5,
